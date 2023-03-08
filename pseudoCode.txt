@@ -1,0 +1,44 @@
+Pseudo Code Tri Algo
+
+Input : Jeu de 55 cartes sous forme de tuple (valeur:int, "forme":str)
+Input de type : liste[obj ou tuple]
+
+
+Algo triCarte():
+
+    Variable:
+        N <- 55
+        Forme = ["coeur", "carreaux", "pic", "trefle", "joker"]
+        valeur = [1,13] : int
+        dict = {
+            "coeur":[]: length = 13,
+            "carreaux":[]length = 13,
+            "pic":[]length = 13,
+            "trefle":[]length = 13,
+            "joker":[]
+        }
+
+    Debut:
+        for i de 1 a 55
+
+            Checker la forme de i[1]
+            chercher dans les clé du dict la valeur de i[1]
+            dict[i[1]] -> list
+            
+            if i[1] == joker:
+                ajouter dans dict["joker]
+            sinon:
+                Ajouter dans la liste a l'index de (i[0]-1)
+
+    Bonus : Trier les formes selon la demande de l'utilisateur et rendre une list ordonnée de 55.
+    retour : dict rempli ou
+    
+    Fin
+
+
+
+
+
+import randomshapes = ["coeur", "carreau", "pic", "trefle"]deck = []for sh in shapes:
+    for i in range(1,14):
+        deck.append((i,sh))deck.extend([(0,"jocker")]*3)random.shuffle(deck)
