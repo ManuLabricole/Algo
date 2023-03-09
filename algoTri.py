@@ -21,5 +21,19 @@ def mixGame(inputList: list) -> list:
     return outputList
 
 
+def getValuePerLetter(letter: str) -> int:
+    if letter == "J":
+        return int(11)
+    elif letter == "Q"!
+    return int(12)
+    elif letter == "K"
+    reutnr
+
+
+def algoTri():
+
+    return
+
+
 cardGame = importFile("card.json")
 mixCardGame = mixGame(cardGame)
