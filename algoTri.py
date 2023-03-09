@@ -1,6 +1,7 @@
 import json
 import os
 import random
+from typing import Type
 path = os.getcwd()
 
 
@@ -11,7 +12,7 @@ def mixGame(inputList: list) -> list:
 
 def importFile(source: str) -> dict:
 
-    sourceDir = "Algo/"+source
+    sourceDir = source
     f = open(os.path.join(path, sourceDir))
     data = json.load(f)
     f.close()
@@ -19,7 +20,7 @@ def importFile(source: str) -> dict:
     return data
 
 
-def getValuePerLetter(letter: str) -> int:
+def getCardValue(letter: str) -> int:
 
     if type(letter) == int:
         return letter
@@ -37,17 +38,34 @@ def getValuePerLetter(letter: str) -> int:
 def algoTri():
     # Initialization of suit list
     lenghtFamily = 13
-    diamondsList = [0 for i in range(lenghtFamily)]
-    spadesList = [0 for i in range(lenghtFamily)]
-    heartsList = [0 for i in range(lenghtFamily)]
-    clubsList = [0 for i in range(lenghtFamily)]
+    nJoker = 3
 
-    print(len(diamondsList))
+    orderedDict = {
+        "diamonds": [0 for i in range(lenghtFamily)],
+        "spades": [0 for i in range(lenghtFamily)],
+        "hearts": [0 for i in range(lenghtFamily)],
+        "clubs": [0 for i in range(lenghtFamily)],
+        "joker": [0 for i in range(nJoker)]
+    }
+
+    # print(orderedDict["joker"])
     cardGame = importFile("card.json")
     mixGame(cardGame)
 
-    return cardGame
+    for card in cardGame:
+
+        if card["suit"] == "joker":
+            orderedDict["joker"].append(card)
+
+        else:
+            # print(f"{card['value']} and {card['suit']}")
+            value = getCardValue(card["value"])
+            if type(value) != int:
+                raise Type("wrong type")
+            orderedDict[card["suit"]][value-1] = card
+
+    return orderedDict
 
 
 game = algoTri()
-print(game)
+print(game["diamonds"])
