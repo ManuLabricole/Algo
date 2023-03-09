@@ -4,6 +4,11 @@ import random
 path = os.getcwd()
 
 
+def mixGame(inputList: list) -> list:
+
+    random.shuffle(inputList)
+
+
 def importFile(source: str) -> dict:
 
     sourceDir = "Algo/"+source
@@ -12,13 +17,6 @@ def importFile(source: str) -> dict:
     f.close()
 
     return data
-
-
-def mixGame(inputList: list) -> list:
-    print(inputList)
-    outputList = random.shuffle(inputList)
-
-    return outputList
 
 
 def getValuePerLetter(letter: str) -> int:
@@ -37,11 +35,19 @@ def getValuePerLetter(letter: str) -> int:
 
 
 def algoTri():
+    # Initialization of suit list
+    lenghtFamily = 13
+    diamondsList = [0 for i in range(lenghtFamily)]
+    spadesList = [0 for i in range(lenghtFamily)]
+    heartsList = [0 for i in range(lenghtFamily)]
+    clubsList = [0 for i in range(lenghtFamily)]
 
-    return
+    print(len(diamondsList))
+    cardGame = importFile("card.json")
+    mixGame(cardGame)
+
+    return cardGame
 
 
-cardGame = importFile("card.json")
-mixCardGame = mixGame(cardGame)
-
-print(mixCardGame)
+game = algoTri()
+print(game)
