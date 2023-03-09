@@ -15,7 +15,7 @@ def importFile(source: str) -> dict:
 
 
 def mixGame(inputList: list) -> list:
-
+    print(inputList)
     outputList = random.shuffle(inputList)
 
     return outputList
@@ -43,3 +43,5 @@ def algoTri():
 
 cardGame = importFile("card.json")
 mixCardGame = mixGame(cardGame)
+
+print(mixCardGame)
