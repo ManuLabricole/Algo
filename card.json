@@ -1,5 +1,14 @@
 [
   {
+    "suit": "joker"
+  },
+  {
+    "suit": "joker"
+  },
+  {
+    "suit": "joker"
+  },
+  {
     "suit": "hearts",
     "value": 2
   },
@@ -10,7 +19,7 @@
   {
     "suit": "hearts",
     "value": 4
-  },
+  }, 
   {
     "suit": "hearts",
     "value": 5

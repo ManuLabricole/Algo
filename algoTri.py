@@ -22,12 +22,18 @@ def mixGame(inputList: list) -> list:
 
 
 def getValuePerLetter(letter: str) -> int:
-    if letter == "J":
-        return int(11)
-    elif letter == "Q"!
-    return int(12)
-    elif letter == "K"
-    reutnr
+
+    if type(letter) == int:
+        return letter
+    else:
+        if letter == "J":
+            return int(11)
+        elif letter == "Q":
+            return int(12)
+        elif letter == "K":
+            return int(13)
+        elif letter == "A":
+            return int(1)
 
 
 def algoTri():
