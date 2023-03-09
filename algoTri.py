@@ -1,18 +1,25 @@
 import json
 import os
-
+import random
 path = os.getcwd()
-# print(currentDir)
-print(os.path.join(path, "Algo/card.json"))
 
 
-def importFile(data: json) -> dict:
-    # Opening JSON file
-    f = open(os.path.join(path, "Algo/card.json"))
+def importFile(source: str) -> dict:
+
+    sourceDir = "Algo/"+source
+    f = open(os.path.join(path, sourceDir))
     data = json.load(f)
     f.close()
+
     return data
 
 
-print(data)
-len(data)
+def mixGame(inputList: list) -> list:
+
+    outputList = random.shuffle(inputList)
+
+    return outputList
+
+
+cardGame = importFile("card.json")
+mixCardGame = mixGame(cardGame)
